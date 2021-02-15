@@ -59,6 +59,8 @@ def find_urls(filepath, folder_per_note):
 
     if folder_per_note:
         dirname = path.basename(filepath).replace('.html', '')
+        if len(items) == 0:
+            return []
         return [{
             'title': dirname,
             'type': 'subfolder',
