@@ -9,7 +9,7 @@ in your notes. This is done in two stages:
 2. Find all URLs in the files and generate one bookmarks file that follows the folder
    structure presented in the notes. In addition, it can create one bookmark folder
    per notes file for more organization.
-   
+
 The second step can be performed independently of Apple Notes, thus run on any
 plain text files with links.
 
@@ -20,9 +20,11 @@ It may be possible to parse the Note's database at
 rich-text links, but it requires a bigger time investment and is prone to breaking
 upon changes.
 
-Useful resources:
+The export script was written while referencing these sources:
 
 - https://github.com/cfenollosa/NotesAppExport/blob/master/Backup%20Notes.scpt
 - https://github.com/robertgaal/notes-export/blob/master/notesExport.applescript
+- https://github.com/yifaneye/macos-notes-exporter/blob/master/exporter.js
 - https://bear.app/faq/Import%20&%20export/Migrate%20from%20Apple%20Notes/
 - https://macmost.com/export-all-of-the-notes-on-your-mac-using-a-script.html
+- https://developer.apple.com/library/archive/documentation/LanguagesUtilities/Conceptual/MacAutomationScriptingGuide/index.html

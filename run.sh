@@ -1,11 +1,18 @@
 #!/usr/bin/env bash
 
+set -e
+
+# 0. Backup existing exported notes, then remove them.
+if [ -d notes ]
+then
+    tar cjf "notes-$(date +%Y%m%d_%s).bzip2.tar" notes
+    rm -r notes
+fi
+
 # 1. Export notes
-# TODO - make heirarchical
-# NOTE - this does not handle rich text links in Notes
-# rm -rf notes
-# mkdir -p notes
-# osascript export-notes.scpt
+# NOTE - this does not handle rich text links in Notes. Also it will fail if
+# a note has a forward slash in its title.
+osascript exporter.js
 
 # 2. Convert notes to bookmarks
 python create-bookmarks.py \
@@ -15,7 +22,8 @@ python create-bookmarks.py \
     notes bookmarks.html
 
 
-# find notes -iname "*sauces*.html" -type f -exec \
+# 3. Convert notes to markdown
+# find notes -iname "*.html" -type f -exec \
 #     sh -c 'pandoc \
 #         -f html-native_divs-native_spans \
 #         -t markdown-escaped_line_breaks \
