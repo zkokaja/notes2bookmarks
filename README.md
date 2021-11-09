@@ -1,4 +1,7 @@
-`notes2bookmarks` syncs you note's links with your browser bookmarks.
+# notes2bookmarks
+Sync you Note links with your browser bookmarks.
+
+## Description
 
 If you save links in your notes, wiki, or a knowledge base, then you probably
 don't want to maintain two separate stores of links. This tool generates a
@@ -13,6 +16,13 @@ in your notes. This is done in two stages:
 The second step can be performed independently of Apple Notes, thus run on any
 plain text files with links.
 
+## Running
+
+Simply run `run.sh`. It will export all notes as html to a `notes/` directory,
+and then it generate `bookmarks.html` to be imported to a browser.
+
+## Limtations
+
 One limitation with Apple Notes export is that it does not preserve rich-text URLs,
 so currently the script uses a simple regex to find `http[s]://*` type links.
 It may be possible to parse the Note's database at
@@ -20,6 +30,7 @@ It may be possible to parse the Note's database at
 rich-text links, but it requires a bigger time investment and is prone to breaking
 upon changes.
 
+## References
 The export script was written while referencing these sources:
 
 - https://github.com/cfenollosa/NotesAppExport/blob/master/Backup%20Notes.scpt
